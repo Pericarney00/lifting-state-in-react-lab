@@ -5,9 +5,7 @@ import "./App.css";
 import { useState } from "react";
 
 const App = () => {
-  const [stack, newStack] = useState([])
   
-
   const availableIngredients = [
     { name: "Kaiser Bun", color: "saddlebrown" },
     { name: "Sesame Bun", color: "sandybrown" },
@@ -24,7 +22,9 @@ const App = () => {
     { name: "Cheddar Cheese", color: "#FDE18B" },
     { name: "Swiss Cheese", color: "#F1E1A8" },
   ];
-
+  const [stack, newStack] = useState([])
+  const [burger, setBurger] = useState([...availableIngredients])
+  
   const addToBurger = (event) => {
     console.log("addBurg")
   }
@@ -39,7 +39,7 @@ const App = () => {
       <section>
         <IngredientList availableIngredients={availableIngredients} />
         
-        <BurgerStack />
+        <BurgerStack burger={burger} />
       </section>
     </main>
   );
