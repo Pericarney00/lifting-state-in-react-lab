@@ -5,11 +5,11 @@ const BurgerStack = (props) => {
   <ul>
       {props.burger.map((ingredient, index) => {
         return (
-          <li key={index} style={{backgroundColor: ingredient.color}}>
+          <li key={index} style={{ backgroundColor: ingredient.color }}>
             {ingredient.name}
-            <button onClick={props.removedFromBurger}>X</button>
-        </li>
-        )
+            <button onClick={() => props.removeFromBurger(ingredient)}>X</button>
+          </li>
+        );
     })}
   </ul>
   )
