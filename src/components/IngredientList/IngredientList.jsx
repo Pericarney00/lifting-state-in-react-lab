@@ -8,7 +8,7 @@ const IngredientList = (props) => {
       return (
         <li  style={{backgroundColor : ingredient.color}} key={index}>
             {ingredient.name}
-            <button>+</button>
+            <button onClick={()=>props.addToBurger(ingredient)}>+</button>
       </li>
     )
   })}

@@ -23,10 +23,10 @@ const App = () => {
     { name: "Swiss Cheese", color: "#F1E1A8" },
   ];
   const [stack, newStack] = useState([])
-  const [burger, setBurger] = useState([...availableIngredients])
+  const [burger, setBurger] = useState([])
   
-  const addToBurger = (event) => {
-    console.log("addBurg")
+  const addToBurger = (ingredient) => {
+  console.log(ingredient)
   }
 
   const removeFromBurger = (event) => {
@@ -37,9 +37,9 @@ const App = () => {
     <main>
       <h1>Burger Stacker</h1>
       <section>
-        <IngredientList availableIngredients={availableIngredients} />
+        <IngredientList availableIngredients={availableIngredients} addToBurger={addToBurger} />
         
-        <BurgerStack burger={burger} />
+        <BurgerStack burger={burger} removeFromBurger={removeFromBurger} />
       </section>
     </main>
   );
